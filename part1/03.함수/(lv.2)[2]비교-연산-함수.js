@@ -12,7 +12,13 @@
 
 // TODO: looseCompare 함수를 작성하세요.
 
+const looseCompare = (a, b) => {
+  return a == b;
+}
 // TODO: strictCompare 함수를 작성하세요.
+const strictCompare = (a,b) => {
+  return a ===b;
+}
 
 // export 를 수정하지 마세요.
 export { looseCompare, strictCompare };
