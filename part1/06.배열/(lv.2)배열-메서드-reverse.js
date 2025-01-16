@@ -10,6 +10,9 @@
  */
 
 function reverseArray(arr) {
+
+  return [...arr].reverse();
+ 
   // TODO: 원본을 변경하지 않고, 뒤집힌 새 배열을 반환하세요.
 }
 
