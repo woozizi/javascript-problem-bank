@@ -9,13 +9,23 @@
  */
 
 function deepClone(obj) {
-  const result = {};
-  if(typeof target === 'object' && target !== null){
-    for(let prop in target) {
-      result[prop] = obj[prop];
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  let result;
+  if (Array.isArray(obj)) {
+    result = [];
+    for (let i = 0; i < obj.length; i++) {
+      result[i] = deepClone(obj[i]);
     }
-  } else{
-    result = target;
+  } else {
+    result = {};
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        result[key] = deepClone(obj[key]);
+      }
+    }
   }
   return result;
 }
